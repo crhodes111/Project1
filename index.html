@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Travel Research Hub</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="jumbotron container-fluid mt-2 text-center p-2" style="background-color:rgb(11, 11, 75);color: white;">
+        <h1> <strong>Travel Research Hub</strong></h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 bg-light">
+                <h4 class="pt-1"><strong>Search for a City:</strong></h4>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control"id="search-city" aria-label="City Search">
+                    <div class="input-group-append">
+                        <button class=" btn btn-primary" type="button" id="search">Search</button>
+                    </div>
+                </div>  
+            </div>   
+            <div class="col-sm-8">
+                <div class="row ml-2 border border-dark rounded">
+                </div>
+            </div>
+            <div class="col-sm-12" id ="destination-information">
+                <h3>Destination Information:</h3>
+                <div class="row text-light">
+                    <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
+                        <p>Temp:<span id="fTemp0"></span></p>
+                        <p>Humidity:<span id="fHumidity0"></span></p>
+                    </div>
+                    <div class="col-sm-2 bg-primary webcam text-white ml-2 mb-3 p-2 mt-2 rounded" >
+                        <p>Webcam View<span id="webcam"></span></p>
+                    </div>
+                    <div class="col-sm-2 bg-primary rental text-white ml-2 mb-3 p-2 mt-2 rounded">
+                        <p>Rental Information<span id="rental-information"></span></p>
+                    </div>
+                    <div class="col-sm-2 bg-primary restrictions text-white ml-2 mb-3 p-2 mt-2 rounded">
+                        <p>Travel Restrictions<span id="restrictions"></span></p>
+                    </div>
+                </div> 
+            </div>
+            <div class="col-sm-4 bg-light">
+                <h4 class="pt-1"><strong>Top 5 Areas to Visit</strong></h4>
+                <div class="input-group mb-3">
+                    <ol>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ol>        
+        </div>
+    </div>
+</div>    
+</body>
+
+</html>
