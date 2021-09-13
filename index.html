@@ -1,63 +1,230 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Travel Research Hub</title>
-    <link rel="stylesheet" href="/style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Research Hub | Welcome</title>
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
 </head>
 
 <body>
-    <div class="jumbotron container-fluid mt-2 text-center p-2" style="background-color:rgb(11, 11, 75);color: white;">
-        <h1> <strong>Travel Research Hub</strong></h1>
+
+    <!-- Navigation For Mobile -->
+    <!-- Consolidates Web Nav Into Dropdown Menu -->
+    <div class="title-bar" data-responsive-toggle="travelMenu" data-hide-for="small">
+        <button class="menu-icon" type="button" data-toggle></button>
+        <div class="title-bar-title">Menu</div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4 bg-light">
-                <h4 class="pt-1"><strong>Search for a City:</strong></h4>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control"id="search-city" aria-label="City Search">
-                    <div class="input-group-append">
-                        <button class=" btn btn-primary" type="button" id="search">Search</button>
-                    </div>
-                </div>  
-            </div>   
-            <div class="col-sm-8">
-                <div class="row ml-2 border border-dark rounded">
-                </div>
-            </div>
-            <div class="col-sm-12" id ="destination-information">
-                <h3>Destination Information:</h3>
-                <div class="row text-light">
-                    <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
-                        <p>Temp:<span id="fTemp0"></span></p>
-                        <p>Humidity:<span id="fHumidity0"></span></p>
-                    </div>
-                    <div class="col-sm-2 bg-primary webcam text-white ml-2 mb-3 p-2 mt-2 rounded" >
-                        <p>Webcam View<span id="webcam"></span></p>
-                    </div>
-                    <div class="col-sm-2 bg-primary rental text-white ml-2 mb-3 p-2 mt-2 rounded">
-                        <p>Rental Information<span id="rental-information"></span></p>
-                    </div>
-                    <div class="col-sm-2 bg-primary restrictions text-white ml-2 mb-3 p-2 mt-2 rounded">
-                        <p>Travel Restrictions<span id="restrictions"></span></p>
-                    </div>
-                </div> 
-            </div>
-            <div class="col-sm-4 bg-light">
-                <h4 class="pt-1"><strong>Top 5 Areas to Visit</strong></h4>
-                <div class="input-group mb-3">
-                    <ol>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ol>        
+    <!-- Navigation For Web -->
+    <div data-sticky-container>
+    <div class="top-bar" id="travelMenu" data-sticky data-margin-top = 0  style="width:100%">
+        <div class="top-bar-left">
+            <ul class="menu">
+                <li class="menu-text">Travel Research Hub</li>
+                <li><a href="#searchSection">Search</a></li>
+                <li><a href="#destinationInfo">View Info</a></li>
+                <li><a href="#contactInfo">Contact</a></li>
+            </ul>
         </div>
     </div>
-</div>    
-</body>
+</div>
+    <!-- /Navigation -->
 
-</html>
+    <br>
+
+    <div class="row">
+        <!-- Website Description -->
+        <div class="medium-7 large-6 columns">
+            <h1>Find Your Perfect Destination</h1>
+            <p class="subheader">Travel Research Hub is a informational site for users looking to find detailed
+                information about travel
+                destinations they are interested in traveling to. Information including: health & vaccines, weather,
+                visa requirements, currency, electric sockets, language, weather, photos, and webcam views where
+                applicable.
+            <p>
+        </div>
+        <!-- /Website Description -->
+
+        <!-- Top Five Destinations -->
+        <div class="medium-5 large-3 columns">
+            <div class="callout secondary">
+                <p class="lead">Top Destinations</p>
+                <div class="top-five-destinations">
+                    <ol class="no-bullet">
+                        <li>Place</li>
+                        <li>Place</li>
+                        <li>Place</li>
+                        <li>Place</li>
+                        <li>Place</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!-- /Top Five Destinations -->
+
+        <!-- Drilldown Menu For Destinations -->
+        <div class="medium-5 large-3 columns">
+            <div class="callout secondary">
+                <div class="row">
+                    <div class="small-12 columns">
+                        <label id="searchSection">Find Your Dream Vacation</label>
+                        <ul class="vertical dropdown menu" data-dropdown-menu data-disable-hover="true">
+                            <li>
+                                <a href="#">Oceania</a>
+                                <ul class="menu vertical nested">
+                                    <li><a href="#">South Island, New Zeland</a></li>
+                                    <li><a href="#">Bora Bora, French Polynesia</a></li>
+                                    <li><a href="#">Tahiti, French Polynesia</a></li>
+                                    <li><a href="#">Sydney, Australia</a></li>
+                                    <li><a href="#">Great Barrier Reef, Australia</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Asia</a>
+                                <ul class="menu vertical nested">
+                                    <li><a href="#">Phuket, Thailand</a></li>
+                                    <li><a href="#">Tokyo, Japan</a></li>
+                                    <li><a href="#">Republic of Maldives</a></li>
+                                    <li><a href="#">Bali, Indonesia</a></li>
+                                    <li><a href="#">Dubai, United Arab Emirates</a></li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Europe</a>
+                                <ul class="menu vertical nested">
+                                    <li><a href="#">Paris, France</a></li>
+                                    <li><a href="#">London, United Kingdom</a></li>
+                                    <li><a href="#">Rome, Italy</a></li>
+                                    <li><a href="#">Florence, Italy</a></li>
+                                    <li><a href="#">Amalfi Coast, Italy</a></li>
+                                    <li><a href="#">Barcelona, Spain</a></li>
+                                    <li><a href="#">Santorini, Greece</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">North America</a>
+                                <ul class="menu vertical nested">
+                                    <li><a href="#">Maui, Hawaii</a></li>
+                                    <li><a href="#">New York City, New York</a></li>
+                                    <li><a href="#">St. Lucia, Caribbean</a></li>
+                                    <li><a href="#">San Francisco, California</a></li>
+                                    <li><a href="#">Niagara Falls, New York / Canada</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">South America</a>
+                                <ul class="menu vertical nested">
+                                    <li><a href="#">Machu Picchu, Peru</a></li>
+                                    <li><a href="#">Argentine Patagonia, Argentina / Chile</a></li>
+                                    <li><a href="#">Cancun, Mexico</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">National Parks</a>
+                                <ul class="menu vertical nesteds">
+                                    <li><a href="#">Glacier National Park</a></li>
+                                    <li><a href="#">Banff National Park</a></li>
+                                    <li><a href="#">Grand Canyon National Park</a></li>
+                                    <li><a href="#">Yellowstone National Park</a></li>
+                                    <li><a href="#">Yosemite National Park</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Drilldown Menu For Destinations -->
+    </div>
+
+    <div class="row column">
+        <hr>
+    </div>
+
+    <div class="row column">
+        <h3 id="destinationInfo">Destination Information</h3>
+    </div>
+
+    <div class="row small-up-1 medium-up-2 large-up-2">
+        <!-- Weather Information -->
+        <div class="column">
+            <div class="callout">
+                <p class="lead">Weather Information</p>
+                <p id="weatherLocation">Location of Weather + Icon</p>
+                <p id="temp">Temp</p>
+                <p id="wind">Wind</p>
+                <p id="humidity">Humidity</p>
+                <p id="uvIndex">UV Index</p>
+            </div>
+        </div>
+        <!-- /Weather Information  -->
+
+        <!-- Travel Briefing -->
+        <div class="column">
+            <div class="callout">
+                <p class="lead">Travel Briefing</p>
+                <!-- currency, language, vax, outets, water quality -->
+                <p id="travelAdvice">Travel Advice Link</p>
+                <p id="waterQuality">Water Quality</p>
+                <p id="currency">Currency</p>
+                <p id="language">Language</p>
+                <p id="vaccineInfo">Vaccine Link</p>
+            </div>
+        </div>
+        <!-- /Travel Briefing -->
+
+        <!-- Air BNB Listings -->
+        <div class="column">
+            <div class="callout">
+                <p class="lead">Air BNB Listings</p>
+                <p id="airbnb-1">Listing 1</p>
+                <p id="airbnb-2">Listing 2</p>
+                <p id="airbnb-3">Listing 3</p>
+                <p id="airbnb-4">Listing 4</p>
+                <p id="airbnb-5">Listing 5</p>
+            </div>
+        </div>
+        <!-- /Air BNB Listings -->
+
+        <!-- Webcams -->
+        <div class="column">
+            <div class="callout">
+                <p class="lead">Webcam View</p>
+                <p><img src="https://dummyimage.com/640x360/fff/aaa" alt="image of a planet called Pegasi B"></p>
+                <p class="subheader">Webcam Location</p>
+            </div>
+        </div>
+        <!-- /Webcams -->
+    </div>
+
+    <footer>
+        <div class="row expanded callout secondary">
+            <!-- Contact Info -->
+            <div class="columns">
+                <p id="contactInfo" class="lead">Contact</p>
+                <ul class="menu">
+                    <li><a href="#"><i class="fi-social-twitter"></i> Twitter</a></li>
+                    <li><a href="#"><i class="fi-social-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fi-social-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fi-social-github"></i> GitHub</a></li>
+                </ul>
+            </div>
+           <!-- /Contact Info -->
+        </div>
+
+        <div class="medium-6 columns">
+            <ul class="menu">
+                <li class="menu-text">Copyright</li>
+            </ul>
+        </div>
+
+
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script>
+        $(document).foundation();
+  </script>
