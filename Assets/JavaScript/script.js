@@ -1,4 +1,5 @@
-var country = "China";
+var country = "Japan";
+var countryId = 'JP';
 var amadeusApi = 'v2VHGvDzvKkUDZ4dYmrvGtgXbIryxVoC';
 var amadeusSecret = 'BXi2TubLGNGhXqEC';
 
@@ -55,7 +56,7 @@ function travelBrief (country) {
 webCam();
 
 function webCam () {
-    fetch('https://api.windy.com/api/webcams/v2/list/country=CN?show=webcams:location,image&key=DucimssCbEzOJVh8c8yJe1rLBHnDXfBz')
+    fetch('https://api.windy.com/api/webcams/v2/list/country=' + countryId + '?show=webcams:location,image&key=DucimssCbEzOJVh8c8yJe1rLBHnDXfBz')
     .then(function(response) {return response.json()})
     .then(function(data) {
         //console.log(data.result.webcams[Math.trunc(Math.random()*data.result.webcams.length)].image.daylight.preview);
@@ -64,3 +65,66 @@ function webCam () {
         webcamEL.appendChild(pW);
     })
 }
+
+$('.destination').on('click', function (event) {
+    event.preventDefault()
+
+    //let destinationTarget = event.target.innerHTML
+    let destinationTarget = 'Tokyo,Japan';
+    const apiKey = '668cdb30df14e3d9284e2e3a36347615'
+
+    fetch(
+        'https://api.openweathermap.org/data/2.5/weather?q=' +
+        destinationTarget +
+        '&units=imperial' +
+        '&appid=' +
+        apiKey
+    )
+        .then(function (responce) {
+            return responce.json();
+        })
+        .then(function (data) {
+            const destinationTemp = data.main.temp
+            const destinationIconData = data.weather[0].icon;
+            const destinationIconURL = "http://openweathermap.org/img/w/" + destinationIconData + ".png";
+            const destinationWind = data.wind.speed
+            const destinationHumidity = data.main.humidity
+
+            console.log(destinationIconData);
+
+            $('#weatherLocation').text(destinationTarget)
+            $('#weatherIcon').attr('src', destinationIconURL)
+            $('#temp').text(`Temp: ${destinationTemp} ℉`)
+            $('#wind').text(`Wind: ${destinationWind} MPH`)
+            $('#humidity').text(`Humidity: ${destinationHumidity}%`)
+
+            const lon = data.coord.lon
+            const lat = data.coord.lat
+
+            fetch(
+                'https://api.openweathermap.org/data/2.5/onecall?lat='+
+                lat +
+                '&lon=' +
+                lon +
+                '&appid='+
+                apiKey
+            )
+            .then(function(responce){
+                return responce.json();
+            })
+            .then(function(data){
+                const destinationUV = data.current.uvi
+                
+                if (destinationUV < 4) {
+                    $('#uvIndex').addClass('label success')
+                }else if (destinationUV > 5 && destinationUV < 8) {
+                    $('#uvIndex').addClass('label warning')
+                } else {
+                    $('#uvIndex').addClass('label alert')
+                }
+
+                $('#uvIndex').text(`UV Index: ${destinationUV}`)
+                
+            })
+        })
+})
