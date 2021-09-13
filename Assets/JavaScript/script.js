@@ -9,6 +9,7 @@ var languageEl = document.querySelector('#language');
 var vaccineEl = document.querySelector('#vaccine');
 var webcamEL = document.querySelector('#webcam');
 var listEl = document.querySelector('#destination');
+var hotelsEl = document.querySelector('#hotels');
 
 if (JSON.parse(localStorage.getItem('value')) != null) {
     var savedValue = JSON.parse(localStorage.getItem('value'));
@@ -115,7 +116,10 @@ function displayData (value, cityName) {
             $('#temp').text(`Temp: ${destinationTemp} ℉`)
             $('#wind').text(`Wind: ${destinationWind} MPH`)
             $('#humidity').text(`Humidity: ${destinationHumidity}%`)
-
+            
+            hotelsEl.innerHTML ="";
+            hotelsEl.innerHTML = "<a href=\"" + hotelUrls[value] + "\">" + hotelUrls[value] + "</a>";
+           
             const lon = data.coord.lon
             const lat = data.coord.lat
 
@@ -146,3 +150,19 @@ function displayData (value, cityName) {
             })
         })
 }
+
+var hotelUrls = ["https://www.tripadvisor.com/SmartDeals-g255116-South_Island-Hotel-Deals.html",
+ "https://www.tripadvisor.com/Hotels-g187147-Paris_Ile_de_France-Hotels.html",
+ "https://www.tripadvisor.com/Hotels-g150807-Cancun_Yucatan_Peninsula-Hotels.html",
+ "https://www.tripadvisor.com/Hotels-g60713-San_Francisco_California-Hotels.html",
+ "https://www.tripadvisor.com/Hotels-g309679-Tahiti_Society_Islands-Hotels.html",
+ "https://www.tripadvisor.com/Hotels-g186338-London_England-Hotels.html",
+ "https://www.tripadvisor.com/Hotels-g187791-Rome_Lazio-Hotels.html",
+ "https://www.tripadvisor.com/Hotels-g293920-Phuket-Hotels.html",
+ "https://www.tripadvisor.com/Hotels-g298184-Tokyo_Tokyo_Prefecture_Kanto-Hotels.html",
+ "https://www.tripadvisor.com/Hotels-g187497-Barcelona_Catalonia-Hotels.html",
+ "https://www.tripadvisor.com/Hotels-g295424-Dubai_Emirate_of_Dubai-Hotels.html",
+ "https://www.tripadvisor.com/Hotels-g154911-Banff_Banff_National_Park_Alberta-Hotels.html",
+ "https://www.tripadvisor.com/Hotels-g60763-New_York_City_New_York-Hotels.html",
+ "https://www.tripadvisor.com/Hotels-g294226-Bali-Hotels.html",
+ "https://www.tripadvisor.com/Hotels-g255060-Sydney_New_South_Wales-Hotels.html"];
