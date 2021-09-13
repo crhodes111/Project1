@@ -10,6 +10,12 @@ var vaccineEl = document.querySelector('#vaccine');
 var webcamEL = document.querySelector('#webcam');
 var listEl = document.querySelector('#destination');
 
+if (JSON.parse(localStorage.getItem('value')) != null) {
+    var savedValue = JSON.parse(localStorage.getItem('value'));
+    var savedCity = JSON.parse(localStorage.getItem('city'));
+    displayData(savedValue, savedCity);
+}
+
 function travelBrief (country) {
     fetch('https://travelbriefing.org/' + country + '?format=json')
         .then(function(response) {return response.json()})
@@ -68,15 +74,21 @@ function webCam (countryId) {
 
 $('.destination').on('click', function (event) {
     event.preventDefault()
-    
-    var value = listEl.value;
     var cityName = listEl.options[listEl.selectedIndex].text;
+    var value = listEl.value;
+    localStorage.setItem('value', JSON.stringify(value));
+    localStorage.setItem('city', JSON.stringify(cityName));
+    displayData(value, cityName);
+})
+
+function displayData (value, cityName) {
+    
+    var cityName = cityName;
     let destinationTarget = cityArr[value];
 
     webCam(countryIdarr[value]);
     travelBrief(countryArr[value]);
     
-
     const apiKey = '668cdb30df14e3d9284e2e3a36347615'
 
     fetch(
@@ -133,4 +145,4 @@ $('.destination').on('click', function (event) {
                 
             })
         })
-})
+}
