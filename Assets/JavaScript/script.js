@@ -10,6 +10,7 @@ var vaccineEl = document.querySelector('#vaccine');
 var webcamEL = document.querySelector('#webcam');
 var listEl = document.querySelector('#destination');
 var hotelsEl = document.querySelector('#hotels');
+var hotelDisplay = document.querySelector('#hotelDisplay')
 
 if (JSON.parse(localStorage.getItem('value')) != null) {
     var savedValue = JSON.parse(localStorage.getItem('value'));
@@ -118,8 +119,11 @@ function displayData (value, cityName) {
             $('#humidity').text(`Humidity: ${destinationHumidity}%`)
             
             hotelsEl.innerHTML ="";
-            hotelsEl.innerHTML = "<a href=\"" + hotelUrls[value] + "\">" + hotelUrls[value] + "</a>";
-           
+            hotelsEl.innerHTML = "<a href=\"" + hotelUrls[value] + "\">Tripadvisor</a>";
+            var url = hotelUrls[value];
+            console.log(url);
+            hotelDisplay.setAttribute('src', hotelUrls[value]);
+
             const lon = data.coord.lon
             const lat = data.coord.lat
 
@@ -166,3 +170,5 @@ var hotelUrls = ["https://www.tripadvisor.com/SmartDeals-g255116-South_Island-Ho
  "https://www.tripadvisor.com/Hotels-g60763-New_York_City_New_York-Hotels.html",
  "https://www.tripadvisor.com/Hotels-g294226-Bali-Hotels.html",
  "https://www.tripadvisor.com/Hotels-g255060-Sydney_New_South_Wales-Hotels.html"];
+
+ 

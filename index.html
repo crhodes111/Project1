@@ -83,7 +83,7 @@
         <!-- Weather Information -->
         <div class="column">
             <div class="callout">
-                <p class="lead">Weather Information</p>
+                <label class="lead">Weather Information</label>
                 <p id="weatherLocation">Location of Weather + Icon</p>
                 <p id="temp">Temp</p>
                 <p id="wind">Wind</p>
@@ -96,33 +96,40 @@
         <!-- Travel Briefing -->
         <div class="column">
             <div class="callout">
-                <p class="lead">Travel Briefing</p>
+                <label class="lead">Travel Briefing</label>
                 <!-- currency, language, vax, outets, water quality -->
-                <div id="advise">Travel Advice Link</div>
-                <div id="water">Water Quality</div>
-                <div id="currency">Currency</div>
-                <div id="language">Language</div>
-                <div id="vaccine">Vaccine Link</div>
+                <p id="advise">Travel Advice Link</p>
+                <p id="water">Water Quality</p>
+                <p id="currency">Currency</p>
+                <p id="language">Language</p>
+                <p id="vaccine">Vaccine Link</p>
             </div>
         </div>
         <!-- /Travel Briefing -->
 
         <div class="medium-5 large-3 columns">
-            <div class="callout secondary">
+            <div class="callout">
                 <div class="row">
-                    <div class="small-12 columns">
-                        <label>Hotels</label>
+                    <div class="hotel-info">
+                        <label class="lead">Hotels</label>
                         <p id="hotels"></p>
-                        
                     </div>
+                        <div class="iframe-container">
+                        <iframe id="hotelDisplay" 
+                            src="" 
+                            frameborder="10"
+                            ></iframe>
+                        </div>
+                    
                 </div>
             </div>
         </div>
 
         <!-- Webcams -->
         <div class="column">
-            <div class="callout" id="webcam">
-                <p class="lead">Webcam View</p>
+            <div class="callout">
+                <label class="lead">Webcam View</label>
+                <div id="webcam"></div>
             </div>
         </div>
         <!-- /Webcams -->
@@ -134,7 +141,6 @@
             <div class="columns">
                 <p id="contactInfo" class="lead">Contact</p>
                 <ul class="menu">
-                    <li><a href="#"><i class="fi-social-twitter"></i> Twitter</a></li>
                     <li><a href="#"><i class="fi-social-facebook"></i> Facebook</a></li>
                     <li><a href="#"><i class="fi-social-instagram"></i> Instagram</a></li>
                     <li><a href="#"><i class="fi-social-github"></i> GitHub</a></li>
