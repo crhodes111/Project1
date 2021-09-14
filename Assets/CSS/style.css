@@ -64,6 +64,28 @@ h4 {
     color: black;
 }
 
+.hotel-info{
+    padding: 1em;
+}
+
+.iframe-container {
+    overflow: hidden;
+    padding-top: 56.25%;
+    position: relative;
+}
+
+.iframe-container iframe {
+    border: 0;
+    height: 100%;
+    left: 0%;
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    padding: .5em;
+}
+
+
+
 @media screen and (max-width: 600px) {
     .input-group {
         width: 100%;
