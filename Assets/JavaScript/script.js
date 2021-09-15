@@ -10,7 +10,9 @@ var vaccineEl = document.querySelector('#vaccine');
 var webcamEL = document.querySelector('#webcam');
 var listEl = document.querySelector('#destination');
 var hotelsEl = document.querySelector('#hotels');
-var hotelDisplay = document.querySelector('#hotelDisplay')
+var hotelDisplay = document.querySelector('#hotelDisplay');
+var electricityEl = document.querySelector('#electricity');
+var plugsEl = document.querySelector('#plugs');
 
 if (JSON.parse(localStorage.getItem('value')) != null) {
     var savedValue = JSON.parse(localStorage.getItem('value'));
@@ -52,6 +54,18 @@ function travelBrief (country) {
                 vaccineEl.innerHTML = "No vaccinations recommended";
             }
             
+            electricityEl.innerHTML = "Electrictal Voltage: " + data.electricity.voltage;
+
+            if (data.electricity.plugs.length > 1) {
+                for(i = 0; i < data.electricity.plugs.length; i++) {
+                    
+                    var pE = document.createElement('p');
+                    pE.innerHTML = "Plug Type " + (i+1) + ": " + data.electricity.plugs[i];
+                    plugsEl.appendChild(pE);
+                }
+            } else {
+                plugsEl.innerHTML = "Plug Type: " + data.electricity.plugs[0];
+            }
     })
 }
 
