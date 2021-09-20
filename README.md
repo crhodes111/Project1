@@ -16,8 +16,13 @@ I WANT up to date travel restrictions,  with weather information for my destinat
 SO THAT I can plan my vacation accordingly.
 ```
 ## Layout Concept
-
 <img src="Assets/Images/travel-hub-concept.png">
+
+## Mobile View
+<img src="Assets/Images/travel-hub-mobile.png" width="300">
+
+## Web View 
+<img src="Assets/Images/travel-hub-web.png" width="500">
 
 ## APIs in use
 
