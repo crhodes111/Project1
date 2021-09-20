@@ -4,6 +4,9 @@
 
 Travel information site for users looking to find detailed information about travel destinations they are interested in traveling to. Information including: health & vaccines, weather, visa requirements, currency, electric sockets, language, weather, photos, and webcam views where applicable.
 
+## Link
+
+Here is a link to the deployed application: https://crhodes111.github.io/Project1/
 
 ## User Story
 
